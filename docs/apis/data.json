@@ -1,0 +1,3806 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "The StudioC REST Data API",
+    "description": "See https://github.com/TheStudioC/docs/tree/main/docs/apis for more information.",
+    "version": "v1",
+    "x-logo": {
+      "url": "https://raw.githubusercontent.com/TheStudioC/docs/main/docs/logo.png",
+      "altText": "The StudioC Logo"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://data-api.thestudioc.org"
+    }
+  ],
+  "paths": {
+    "/ingest/v1/donationaccount": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DonationAccountCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DonationAccountUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
+    "/ingest/v1/attendance": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AttendanceCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AttendanceUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
+    "/ingest/v1/donation": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DonationCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/DonationUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
+    "/ingest/v1/event": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/EventCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/EventUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
+    "/ingest/v1/grouptype": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/GroupTypeCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/GroupTypeUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
+    "/ingest/v1/grouprole": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/GroupRoleCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/GroupRoleUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
+    "/ingest/v1/grouproletype": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/GroupRoleTypeCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/GroupRoleTypeUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
+    "/ingest/v1/location": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/LocationCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/LocationUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
+    "/ingest/v1/memberrole": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MemberRoleCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MemberRoleUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
+    "/ingest/v1/membertype": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MemberTypeCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MemberTypeUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
+    "/ingest/v1/people": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PersonCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PersonUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
+    "/ingest/v1/personfamily": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PersonFamilyCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PersonFamilyUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
+    "/ingest/v1/persongroup": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PersonGroupCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PersonGroupUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
+    "/ingest/v1/registration": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RegistrationCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RegistrationUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
+    "/ingest/v1/signup": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SignupCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/SignupUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
+    "/ingest/v1/volunteer": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/VolunteerCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/VolunteerUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
+    "/webhooks": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "Handles a variety of single event type payloads.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebhookPayload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AttendanceBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "personId": {
+            "type": "string",
+            "description": "The person to whom this interaction happened or who performed this interaction",
+            "nullable": true
+          },
+          "attendanceDate": {
+            "type": "string",
+            "description": "The date this occurred",
+            "format": "date-time"
+          },
+          "attendanceEndDate": {
+            "type": "string",
+            "description": "If needed, the date this single attendance item stopped occurring",
+            "format": "date-time",
+            "nullable": true
+          },
+          "serviceTypeId": {
+            "type": "string",
+            "description": "If applicable, the service type ID related to this attendance",
+            "nullable": true
+          },
+          "serviceTypeName": {
+            "type": "string",
+            "description": "If applicable, the name of the name of the service type related to this attendance",
+            "nullable": true
+          },
+          "attendanceTypeId": {
+            "type": "string",
+            "description": "If applicable in your system, the type of this attendance. This should not be used to differentiate\r\nattendance/volunteering.",
+            "nullable": true
+          },
+          "cmsGroupId": {
+            "type": "string",
+            "description": "If applicable, the group ID attached to this attendance",
+            "nullable": true
+          },
+          "eventName": {
+            "type": "string",
+            "description": "If applicable, the name attached to the EventData for this attendance",
+            "nullable": true
+          },
+          "eventId": {
+            "type": "string",
+            "description": "If applicable, the ID attached to the EventBaseV1 for this attendance",
+            "nullable": true
+          },
+          "eventOccurrenceId": {
+            "type": "string",
+            "description": "If applicable, the ID attached to the EventOccurrenceData for this attendance",
+            "nullable": true
+          },
+          "locationId": {
+            "type": "string",
+            "description": "If applicable, the ID of the LocationBaseV1 related to this attendance",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "An instance of a person attending an event"
+      },
+      "AttendanceCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AttendanceBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'attendances.v1.events.attendance.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AttendanceUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AttendanceBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'attendances.v1.events.attendance.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AttributeDataV1": {
+        "type": "object",
+        "properties": {
+          "attributeId": {
+            "type": "string",
+            "description": "The ID of the attribute",
+            "nullable": true
+          },
+          "attributeName": {
+            "type": "string",
+            "description": "The name of the attribute",
+            "nullable": true
+          },
+          "attributeValueId": {
+            "type": "string",
+            "description": "The ID of the attribute value",
+            "nullable": true
+          },
+          "attributeValue": {
+            "type": "string",
+            "description": "The value of the attribute",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean",
+            "description": "Indicates if the attribute on this person is deleted",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the attribute was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the attribute was last updated",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a person's attribute"
+      },
+      "DonationAccountBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "accountName": {
+            "type": "string",
+            "description": "The recognizable name of the account",
+            "nullable": true
+          },
+          "taxDeductible": {
+            "type": "boolean",
+            "description": "Whether this account is tax-deductible"
+          },
+          "parentAccountId": {
+            "type": "string",
+            "description": "If parent-child relationships exist between accounts in your system, this should be the ID of another\r\nDonationAccountBaseV1",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "A category/grouping/account toward which a donation is contributed."
+      },
+      "DonationAccountCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/DonationAccountBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'donations.v1.events.account.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DonationAccountUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/DonationAccountBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'donations.v1.events.account.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DonationBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "personId": {
+            "type": "string",
+            "description": "The person to whom this interaction happened or who performed this interaction",
+            "nullable": true
+          },
+          "transactionDate": {
+            "type": "string",
+            "description": "When the contribution occurred",
+            "format": "date-time"
+          },
+          "amount": {
+            "type": "number",
+            "description": "The monetary value of the contribution in dollars and cents",
+            "format": "double",
+            "nullable": true
+          },
+          "accountId": {
+            "type": "string",
+            "description": "The ID of the DonationAccountBaseV1 to which this contribution was made",
+            "nullable": true
+          },
+          "softCreditPersonId": {
+            "type": "string",
+            "description": "if multiple people should be credited for this donation, this can be the ID of another PersonBaseV1",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a contribution of a person applied to an account. This can be used to represent any kind of contribution\r\nthat has monetary value (e.g., donations \"in-kind\")."
+      },
+      "DonationCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/DonationBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'donations.v1.events.donation.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DonationUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/DonationBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'donations.v1.events.donation.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EventBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "eventName": {
+            "type": "string",
+            "description": "The name of the event",
+            "nullable": true
+          },
+          "eventDescription": {
+            "type": "string",
+            "description": "A description of the event",
+            "nullable": true
+          },
+          "startDate": {
+            "type": "string",
+            "description": "The date and time the event starts. If time doesn't mean anything in your system, it can be anything arbitrary.",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "The date and time the event ends. If time doesn't mean anything in your system, it can be anything arbitrary.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "headcount": {
+            "type": "integer",
+            "description": "The total number of people that attended the event by taking a physical headcount. Only set this if it makes\r\nsense in your system.",
+            "format": "int32"
+          },
+          "locationId": {
+            "type": "string",
+            "description": "The ID of the LocationBaseV1 where the event is held.",
+            "nullable": true
+          },
+          "groupId": {
+            "type": "string",
+            "description": "The ID of the CmsGroup associated with the event",
+            "nullable": true
+          },
+          "eventGroupingId": {
+            "type": "string",
+            "description": "The ID of the grouping for the event. This",
+            "nullable": true
+          },
+          "eventGroupingName": {
+            "type": "string",
+            "description": "The name of the grouping for the event",
+            "nullable": true
+          },
+          "eventOccurrences": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EventOccurrenceData"
+            },
+            "description": "A collection of occurrences for this event",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a way to organize instances of an event together at a top level."
+      },
+      "EventCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/EventBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'events.v1.events.event.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EventOccurrenceData": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The unique identifier for this event occurrence",
+            "nullable": true
+          },
+          "occurrenceDate": {
+            "type": "string",
+            "description": "The date this occurrence happens",
+            "format": "date-time"
+          },
+          "headcount": {
+            "type": "integer",
+            "description": "The headcount for this specific occurrence",
+            "format": "int32"
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When this occurrence was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When this occurrence was last updated",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a specific occurrence of an event"
+      },
+      "EventUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/EventBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'events.v1.events.event.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FormAnswerV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID that represents the submission of this line-item question. If your system doesn't support this,\r\nupdates to a form submission's answers must be done all at once with 'replaceAnswers'",
+            "nullable": true
+          },
+          "fieldId": {
+            "type": "string",
+            "description": "The ID of the line-item question. Multiple Form Answers can have the same fieldId in a payload only if they\r\n            represent multiple selections to a multi-select (checkbox-style) question",
+            "nullable": true
+          },
+          "fieldTitle": {
+            "type": "string",
+            "description": "The question that this line-item poses",
+            "nullable": true
+          },
+          "titleValue": {
+            "type": "string",
+            "description": "If the type of the answer is any type of free-form, then the value the submitter entered",
+            "nullable": true
+          },
+          "choiceId": {
+            "type": "string",
+            "description": "If this answer field is a single-select (dropdown) question, the ID of the choice",
+            "nullable": true
+          },
+          "choiceValue": {
+            "type": "string",
+            "description": "If choiceId is set, then the user-facing value that corresponds to it",
+            "nullable": true
+          },
+          "optionId": {
+            "type": "string",
+            "description": "If this answer field is a multi-select (checkboxes) question, the ID of the choice.\r\n            If the answer field is a checkbox+\"write-in\", this can be omitted",
+            "nullable": true
+          },
+          "optionValue": {
+            "type": "string",
+            "description": "If optionId is set or the answer field is a checkbox+\"write-in\", the user-facing value that corresponds to it",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When this line-item response was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When this line-item response was updated",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A line-item on the submission of a form for which the submitter entered a value"
+      },
+      "FormResponseBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "formId": {
+            "type": "string",
+            "description": "The ID of the form that was submitted",
+            "nullable": true
+          },
+          "personId": {
+            "type": "string",
+            "description": "The PersonBaseV1 ID of the person submitting the form. Must already exist",
+            "nullable": true
+          },
+          "submissionDate": {
+            "type": "string",
+            "description": "When the form was submitted",
+            "format": "date-time"
+          },
+          "modifiedDate": {
+            "type": "string",
+            "description": "When this form submission was last modified",
+            "format": "date-time"
+          },
+          "formAnswers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FormAnswerV1"
+            },
+            "description": "A list of answers on this form's submission",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a single submission to an existing form, not the form itself"
+      },
+      "FormResponseCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/FormResponseBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'formresponses.v1.events.formresponse.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FormResponseUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/FormResponseBaseV1"
+          }
+        ],
+        "properties": {
+          "replaceAnswers": {
+            "type": "boolean",
+            "description": "set to true to replace all answer line-items for this form response with those supplied in this payload.\r\nUseful if form response line-items do not have an ID"
+          },
+          "type": {
+            "description": "For webhook payload value MUST BE 'formresponses.v1.events.formresponse.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupRoleBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "groupRoleName": {
+            "type": "string",
+            "description": "The name of the role within the group",
+            "nullable": true
+          },
+          "groupRoleTypeId": {
+            "type": "string",
+            "description": "The ID of the GroupRoleTypeBaseV1 associated with this role",
+            "nullable": true
+          },
+          "groupTypeId": {
+            "type": "string",
+            "description": "The ID of the GroupTypeBaseV1 associated with this role.\r\nExample: groupTypeId is \"leader\" where roles could be \"coach\", \"servant\", \"chef\", \"usher\"",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the base data for a group role"
+      },
+      "GroupRoleCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GroupRoleBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'groups.v1.events.grouprole.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupRoleTypeBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "groupRoleTypeName": {
+            "type": "string",
+            "description": "The name of the group role type",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a person's role within a PersonGroupBaseV1.\r\nExamples: \"Leader\", \"Assistant Leader\", \"Member\", \"Director\""
+      },
+      "GroupRoleTypeCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GroupRoleTypeBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'groups.v1.events.grouproletype.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupRoleTypeUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GroupRoleTypeBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'groups.v1.events.grouproletype.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupRoleUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GroupRoleBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'groups.v1.events.grouprole.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupTypeBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "groupTypeName": {
+            "type": "string",
+            "description": "The name of the group type",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a type of PersonGroupBaseV1 within your system.\r\nCommon examples: \"Service Group\", \"Small Group\", \"Dream Team\", \"Audio/Visual\""
+      },
+      "GroupTypeCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GroupTypeBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'groups.v1.events.grouptype.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupTypeUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GroupTypeBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'groups.v1.events.grouptype.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LocationBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "locationName": {
+            "type": "string",
+            "description": "The name of the location",
+            "nullable": true
+          },
+          "regionName": {
+            "type": "string",
+            "description": "The region name",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "description": "The address",
+            "nullable": true
+          },
+          "address2": {
+            "type": "string",
+            "description": "The second line of the address",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "description": "The city",
+            "nullable": true
+          },
+          "state": {
+            "type": "string",
+            "description": "The state",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "string",
+            "description": "The postal code",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "description": "The phone number",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "The email address",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean",
+            "description": "Indicates if the location is active"
+          },
+          "parentLocationId": {
+            "type": "string",
+            "description": "The LocationBaseV1 ID of the parent location",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a physical location for your organization"
+      },
+      "LocationCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/LocationBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'locations.v1.events.location.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LocationUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/LocationBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'locations.v1.events.location.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MemberRoleBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "memberRoleName": {
+            "type": "string",
+            "description": "The name of the member role",
+            "nullable": true
+          },
+          "isParent": {
+            "type": "boolean",
+            "description": "Is a parent of a child, not hierarchy"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the base data for a PersonBaseV1's role within a PersonFamilyBaseV1.\r\nExamples: \"Parent\", \"Child\", \"Other\", \"Adult Child\""
+      },
+      "MemberRoleCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/MemberRoleBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'people.v1.events.memberrole.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MemberRoleUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/MemberRoleBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'people.v1.events.memberrole.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MemberTypeBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "memberTypeDescription": {
+            "type": "string",
+            "description": "The description of the member type",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a type of relationship between a PersonBaseV1 and your organization. Examples:\r\n\"Member\", \"Staff\", \"Regular\". A person should be exactly one of these. Any more delineation can be specified\r\nthrough a PersonBaseV1's AttributeDataV1"
+      },
+      "MemberTypeCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/MemberTypeBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'people.v1.events.membertype.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MemberTypeUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/MemberTypeBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'people.v1.events.membertype.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PayloadItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Base class for all webhook payload items, containing common properties"
+      },
+      "PersonBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "personAge": {
+            "type": "integer",
+            "description": "The person's age",
+            "format": "int32",
+            "nullable": true
+          },
+          "personBirthday": {
+            "type": "string",
+            "description": "The person's birthday",
+            "format": "date",
+            "nullable": true
+          },
+          "isDeceased": {
+            "type": "boolean",
+            "description": "Indicates if the person is deceased",
+            "nullable": true
+          },
+          "personFirstName": {
+            "type": "string",
+            "description": "The person's first name",
+            "nullable": true
+          },
+          "personMiddleName": {
+            "type": "string",
+            "description": "The person's middle name",
+            "nullable": true
+          },
+          "personLastName": {
+            "type": "string",
+            "description": "The person's last name",
+            "nullable": true
+          },
+          "personGender": {
+            "type": "string",
+            "description": "The person's gender. Should be one of \"Female\", \"Male\", \"Other\", or \"Unknown\"",
+            "nullable": true
+          },
+          "personEmail": {
+            "type": "string",
+            "description": "The person's email address",
+            "nullable": true
+          },
+          "personPhone": {
+            "type": "string",
+            "description": "The person's phone number",
+            "nullable": true
+          },
+          "street": {
+            "type": "string",
+            "description": "The street address",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "description": "The person's city",
+            "nullable": true
+          },
+          "state": {
+            "type": "string",
+            "description": "The person's state",
+            "nullable": true
+          },
+          "zip": {
+            "type": "string",
+            "description": "The person's zip code",
+            "nullable": true
+          },
+          "avatar": {
+            "type": "string",
+            "description": "A publicly accessible URL for an avatar of this person",
+            "nullable": true
+          },
+          "maritalStatus": {
+            "type": "string",
+            "description": "A person's marital status: \"Single\", \"Married\", \"Widowed\", \"Divorced\", or \"Unknown\"",
+            "nullable": true
+          },
+          "employer": {
+            "type": "string",
+            "description": "The person's employer's name",
+            "nullable": true
+          },
+          "neighborhood": {
+            "type": "string",
+            "description": "The name of the person's neighborhood",
+            "nullable": true
+          },
+          "baptismDate": {
+            "type": "string",
+            "description": "The person's baptism date",
+            "format": "date",
+            "nullable": true
+          },
+          "marriageDate": {
+            "type": "string",
+            "description": "The person's marriage date",
+            "format": "date",
+            "nullable": true
+          },
+          "membershipDate": {
+            "type": "string",
+            "description": "The person's date of membership with your organization",
+            "format": "date",
+            "nullable": true
+          },
+          "isStaff": {
+            "type": "boolean",
+            "description": "Indicates if the person is staff",
+            "nullable": true
+          },
+          "recordStatus": {
+            "type": "string",
+            "description": "The record status: \"Active\" or \"Inactive\"",
+            "nullable": true
+          },
+          "grade": {
+            "type": "string",
+            "description": "The person's grade level",
+            "nullable": true
+          },
+          "recurringGiver": {
+            "type": "boolean",
+            "description": "Indicates if the person is a recurring giver",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean",
+            "description": "Indicates if this record is deleted",
+            "nullable": true
+          },
+          "primaryCampusId": {
+            "type": "string",
+            "description": "The LocationBaseV1 ID of the primary campus",
+            "nullable": true
+          },
+          "primaryFamilyId": {
+            "type": "string",
+            "description": "The PersonFamilyBaseV1 ID of the primary family",
+            "nullable": true
+          },
+          "memberTypeId": {
+            "type": "string",
+            "description": "The MemberTypeBaseV1 ID of the member type",
+            "nullable": true
+          },
+          "attributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AttributeDataV1"
+            },
+            "description": "A collection of attributes associated with the person",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents data for a person"
+      },
+      "PersonCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PersonBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'people.v1.events.person.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PersonFamilyBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "familyName": {
+            "type": "string",
+            "description": "The name of the family",
+            "nullable": true
+          },
+          "primaryContactId": {
+            "type": "string",
+            "description": "The PersonBaseV1 ID of the person who is the primary contact for the family",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean",
+            "description": "Indicates whether the family record is deleted"
+          },
+          "people": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PersonFamilyPersonRelationshipDataV1"
+            },
+            "description": "A collection of people associated with this family. On update, only the people that are included in this\r\nlist will be modified",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the base data for a Family of people. People can be in multiple families."
+      },
+      "PersonFamilyCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PersonFamilyBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'people.v1.events.personfamily.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PersonFamilyPersonRelationshipDataV1": {
+        "type": "object",
+        "properties": {
+          "personId": {
+            "type": "string",
+            "description": "The PersonBaseV1 ID of the person",
+            "nullable": true
+          },
+          "memberRoleId": {
+            "type": "string",
+            "description": "The MemberRoleCreatedV1 ID of the person within this family\r\n            \r\nInternal examples: adult/child/etc. Defaults to 0 if omitted",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean",
+            "description": "Indicates whether the relationship between this Person and Family is deleted",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the relationship data between a person and a family"
+      },
+      "PersonFamilyUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PersonFamilyBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'people.v1.events.personfamily.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PersonGroupBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "groupName": {
+            "type": "string",
+            "description": "The name of the group",
+            "nullable": true
+          },
+          "departmentSourceId": {
+            "type": "string",
+            "description": "If applicable in your system, the source ID of the department",
+            "nullable": true
+          },
+          "departmentName": {
+            "type": "string",
+            "description": "If applicable in your system, the name of the department",
+            "nullable": true
+          },
+          "groupStatus": {
+            "type": "string",
+            "description": "The status of the group. Must be one of \"NotFound\", \"Unknown\", \"Inactive\", \"Active\", or \"Pending\"",
+            "nullable": true
+          },
+          "locationId": {
+            "type": "string",
+            "description": "The LocationBaseV1 ID of the location associated with this group",
+            "nullable": true
+          },
+          "groupTypeId": {
+            "type": "string",
+            "description": "The GroupTypeBaseV1 ID of the group type",
+            "nullable": true
+          },
+          "people": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PersonGroupPersonV1"
+            },
+            "description": "A collection of people in the group. On update, only the people that are included in this list will be modified",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the base data for a Group of people. This could be a \"virtual\" group, or a real, physical group. It's\r\nflexible enough that any logical collection of people can be associated with each other"
+      },
+      "PersonGroupCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PersonGroupBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'groups.v1.events.persongroup.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PersonGroupPersonV1": {
+        "type": "object",
+        "properties": {
+          "personId": {
+            "type": "string",
+            "description": "The PersonBaseV1 ID of the person",
+            "nullable": true
+          },
+          "isLeader": {
+            "type": "boolean",
+            "description": "Indicates if the person is a leader",
+            "nullable": true
+          },
+          "startDate": {
+            "type": "string",
+            "description": "The date on which a person's group membership started",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endDate": {
+            "type": "string",
+            "description": "The date on which a person's group membership ended",
+            "format": "date-time",
+            "nullable": true
+          },
+          "groupRoleId": {
+            "type": "string",
+            "description": "The GroupRoleBaseV1 ID of the group role",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When this record was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When this record was last updated",
+            "format": "date-time"
+          },
+          "isDeleted": {
+            "type": "boolean",
+            "description": "Indicates if the person is deleted from the group. This will automatically be set if EndDate is\r\nin the past"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a person within a group"
+      },
+      "PersonGroupUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PersonGroupBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'groups.v1.events.persongroup.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PersonUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PersonBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'people.v1.events.person.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegistrationBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "personId": {
+            "type": "string",
+            "description": "The person to whom this interaction happened or who performed this interaction",
+            "nullable": true
+          },
+          "when": {
+            "type": "string",
+            "description": "What date and time this person was registered/waitlisted/canceled.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "signupId": {
+            "type": "string",
+            "description": "Can be null. The ID of the common thing that was submitted by all those who registered/waitlisted/canceled.\r\nIf used, it must be the ID of a SignupBaseV1.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "A model representing that a person has been registered, waitlisted, or canceled for some SignupBaseV1.\r\nEach time a person is registered, waitlisted, or canceled for the same Signup, a new ID should be used."
+      },
+      "RegistrationCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/RegistrationBaseV1"
+          }
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "description": "One of \"registered\", \"waitlisted\", or \"canceled\", describing the kind of registration action that was performed.\r\nOnce a RegistrationBaseV1 record has been created, the Kind cannot be changed.",
+            "nullable": true
+          },
+          "type": {
+            "description": "For webhook payload value MUST BE 'signups.v1.events.registration.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegistrationUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/RegistrationBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'signups.v1.events.registration.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SignupBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "signupName": {
+            "type": "string",
+            "description": "The name of the signup",
+            "nullable": true
+          },
+          "signupDescription": {
+            "type": "string",
+            "description": "The description of the signup",
+            "nullable": true
+          },
+          "archived": {
+            "type": "boolean",
+            "description": "Indicates if the signup is archived",
+            "nullable": true
+          },
+          "eventId": {
+            "type": "string",
+            "description": "The ID of an associated EventBaseV1",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the base data for a signup. This is something for which someone can \"sign up\", whatever that means in\r\nyour system. It can be as simple as an event for which you record \"expressing interest\"."
+      },
+      "SignupCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SignupBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'signups.v1.events.signup.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SignupUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SignupBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'signups.v1.events.signup.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TestHealthyV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PayloadItem"
+          }
+        ],
+        "properties": {
+          "isAcceptable": {
+            "type": "boolean",
+            "description": "Indicates if the payload is acceptable"
+          },
+          "isValid": {
+            "type": "boolean",
+            "description": "Indicates if the payload is valid"
+          },
+          "type": {
+            "description": "For webhook payload value MUST BE 'test.v1.healthy'"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A health check payload item"
+      },
+      "VolunteerBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "personId": {
+            "type": "string",
+            "description": "The person to whom this interaction happened or who performed this interaction",
+            "nullable": true
+          },
+          "attendanceDate": {
+            "type": "string",
+            "description": "The date this occurred",
+            "format": "date-time"
+          },
+          "attendanceEndDate": {
+            "type": "string",
+            "description": "If needed, the date this single attendance item stopped occurring",
+            "format": "date-time",
+            "nullable": true
+          },
+          "serviceTypeId": {
+            "type": "string",
+            "description": "If applicable, the service type ID related to this attendance",
+            "nullable": true
+          },
+          "serviceTypeName": {
+            "type": "string",
+            "description": "If applicable, the name of the name of the service type related to this attendance",
+            "nullable": true
+          },
+          "attendanceTypeId": {
+            "type": "string",
+            "description": "If applicable in your system, the type of this attendance. This should not be used to differentiate\r\nattendance/volunteering.",
+            "nullable": true
+          },
+          "cmsGroupId": {
+            "type": "string",
+            "description": "If applicable, the group ID attached to this attendance",
+            "nullable": true
+          },
+          "eventName": {
+            "type": "string",
+            "description": "If applicable, the name attached to the EventData for this attendance",
+            "nullable": true
+          },
+          "eventId": {
+            "type": "string",
+            "description": "If applicable, the ID attached to the EventBaseV1 for this attendance",
+            "nullable": true
+          },
+          "eventOccurrenceId": {
+            "type": "string",
+            "description": "If applicable, the ID attached to the EventOccurrenceData for this attendance",
+            "nullable": true
+          },
+          "locationId": {
+            "type": "string",
+            "description": "If applicable, the ID of the LocationBaseV1 related to this attendance",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "An instance of a person volunteering for an event"
+      },
+      "VolunteerCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/VolunteerBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'attendances.v1.events.volunteer.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "VolunteerUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/VolunteerBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'attendances.v1.events.volunteer.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WebhookPayload": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique system identifier for the event, not to be confused with id of the data item.",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "Event time, formatted as https://en.wikipedia.org/wiki/ISO_8601 ex: \"yyyy-MM-ddTHH:mm:ssZ\"",
+            "format": "date-time"
+          },
+          "data": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/AttendanceCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/AttendanceUpdatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/DonationAccountCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/DonationAccountUpdatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/DonationCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/DonationUpdatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/EventCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/EventUpdatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/FormResponseCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/FormResponseUpdatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/GroupRoleCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/GroupRoleTypeCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/GroupRoleTypeUpdatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/GroupRoleUpdatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/GroupTypeCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/GroupTypeUpdatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/LocationCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/LocationUpdatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/MemberRoleCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/MemberRoleUpdatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/MemberTypeCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/MemberTypeUpdatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/PersonCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/PersonFamilyCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/PersonFamilyUpdatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/PersonGroupCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/PersonGroupUpdatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/PersonUpdatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/RegistrationCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/RegistrationUpdatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/SignupCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/SignupUpdatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/TestHealthyV1"
+              },
+              {
+                "$ref": "#/components/schemas/VolunteerCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/VolunteerUpdatedV1"
+              }
+            ],
+            "description": "The data payload of the event",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents the standard webhook payload envelope"
+      }
+    },
+    "securitySchemes": {
+      "HMAC": {
+        "type": "apiKey",
+        "description": "HMAC Authorization header using API key and signature (e.g., API_KEY:SIGNATURE)",
+        "name": "Authorization",
+        "in": "header",
+        "x-externalDocs": {
+          "description": "Learn more about JWT authentication",
+          "url": "https://example.com/docs/auth/jwt"
+        }
+      }
+    }
+  }
+}

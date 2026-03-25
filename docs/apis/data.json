@@ -15,6 +15,120 @@
     }
   ],
   "paths": {
+    "/ingest/v1/ancestorrelationship": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AncestorRelationshipCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AncestorRelationshipUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
     "/ingest/v1/donationaccount": {
       "post": {
         "tags": [
@@ -426,6 +540,120 @@
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/EventUpdatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      }
+    },
+    "/ingest/v1/formresponse": {
+      "post": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": "<p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/FormResponseCreatedV1"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Payload Too Large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HMAC": [ ]
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Ingest"
+        ],
+        "description": " Updates may contain full or partial data. When partial, the Id, type, last update date MUST be set in addition to changing values! <p> All ingest APIs are limited to max of 1,000 items.</p>",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/FormResponseUpdatedV1"
                 }
               }
             }
@@ -1887,18 +2115,99 @@
   },
   "components": {
     "schemas": {
+      "AncestorChild": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the child"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the child"
+          },
+          "isDeleted": {
+            "type": "boolean",
+            "description": "Whether the relationship is still valid or not"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents one child of an ancestor"
+      },
+      "AncestorRelationshipBaseV1": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The external system unique identifier"
+          },
+          "type": {
+            "type": "string",
+            "description": "The type discriminator for the payload item"
+          },
+          "createDate": {
+            "type": "string",
+            "description": "When the item was created",
+            "format": "date-time"
+          },
+          "lastUpdateDate": {
+            "type": "string",
+            "description": "When the item was last updated",
+            "format": "date-time"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the ancestor"
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AncestorChild"
+            },
+            "description": "All or some of the children that inherit from this ancestor"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents data for any hierarchical relationships. Children can belong to multiple ancestors.\n            \nId is the Ancestor's ID."
+      },
+      "AncestorRelationshipCreatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AncestorRelationshipBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'ancestorrelationship.v1.events.ancestorrelationship.created'"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AncestorRelationshipUpdatedV1": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AncestorRelationshipBaseV1"
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "For webhook payload value MUST BE 'ancestorrelationship.v1.events.ancestorrelationship.updated'"
+          }
+        },
+        "additionalProperties": false
+      },
       "AttendanceBaseV1": {
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -1933,12 +2242,11 @@
           },
           "serviceTypeName": {
             "type": "string",
-            "description": "If applicable, the name of the name of the service type related to this attendance",
-            "nullable": true
+            "description": "If applicable, the name of the name of the service type related to this attendance"
           },
           "attendanceTypeId": {
             "type": "string",
-            "description": "If applicable in your system, the type of this attendance. This should not be used to differentiate\r\nattendance/volunteering.",
+            "description": "If applicable in your system, the type of this attendance. This should not be used to differentiate\nattendance/volunteering.",
             "nullable": true
           },
           "cmsGroupId": {
@@ -1948,8 +2256,7 @@
           },
           "eventName": {
             "type": "string",
-            "description": "If applicable, the name attached to the EventData for this attendance",
-            "nullable": true
+            "description": "If applicable, the name attached to the EventData for this attendance"
           },
           "eventId": {
             "type": "string",
@@ -2003,8 +2310,7 @@
         "properties": {
           "attributeId": {
             "type": "string",
-            "description": "The ID of the attribute",
-            "nullable": true
+            "description": "The ID of the attribute"
           },
           "attributeName": {
             "type": "string",
@@ -2045,13 +2351,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -2065,8 +2369,7 @@
           },
           "accountName": {
             "type": "string",
-            "description": "The recognizable name of the account",
-            "nullable": true
+            "description": "The recognizable name of the account"
           },
           "taxDeductible": {
             "type": "boolean",
@@ -2074,7 +2377,7 @@
           },
           "parentAccountId": {
             "type": "string",
-            "description": "If parent-child relationships exist between accounts in your system, this should be the ID of another\r\nDonationAccountBaseV1",
+            "description": "If parent-child relationships exist between accounts in your system, this should be the ID of another\nDonationAccountBaseV1",
             "nullable": true
           }
         },
@@ -2114,13 +2417,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -2160,7 +2461,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Represents a contribution of a person applied to an account. This can be used to represent any kind of contribution\r\nthat has monetary value (e.g., donations \"in-kind\")."
+        "description": "Represents a contribution of a person applied to an account. This can be used to represent any kind of contribution\nthat has monetary value (e.g., donations \"in-kind\")."
       },
       "DonationCreatedV1": {
         "type": "object",
@@ -2195,13 +2496,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -2215,8 +2514,7 @@
           },
           "eventName": {
             "type": "string",
-            "description": "The name of the event",
-            "nullable": true
+            "description": "The name of the event"
           },
           "eventDescription": {
             "type": "string",
@@ -2236,23 +2534,20 @@
           },
           "headcount": {
             "type": "integer",
-            "description": "The total number of people that attended the event by taking a physical headcount. Only set this if it makes\r\nsense in your system.",
+            "description": "The total number of people that attended the event by taking a physical headcount. Only set this if it makes\nsense in your system.",
             "format": "int32"
           },
           "locationId": {
             "type": "string",
-            "description": "The ID of the LocationBaseV1 where the event is held.",
-            "nullable": true
+            "description": "The ID of the LocationBaseV1 where the event is held."
           },
           "groupId": {
             "type": "string",
-            "description": "The ID of the CmsGroup associated with the event",
-            "nullable": true
+            "description": "The ID of the CmsGroup associated with the event"
           },
           "eventGroupingId": {
             "type": "string",
-            "description": "The ID of the grouping for the event. This",
-            "nullable": true
+            "description": "The ID of the grouping for the event. This"
           },
           "eventGroupingName": {
             "type": "string",
@@ -2290,8 +2585,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The unique identifier for this event occurrence",
-            "nullable": true
+            "description": "The unique identifier for this event occurrence"
           },
           "occurrenceDate": {
             "type": "string",
@@ -2336,18 +2630,17 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The ID that represents the submission of this line-item question. If your system doesn't support this,\r\nupdates to a form submission's answers must be done all at once with 'replaceAnswers'",
+            "description": "The ID that represents the submission of this line-item question. If your system doesn't support this,\nupdates to a form submission's answers must be done all at once with 'replaceAnswers'",
             "nullable": true
           },
           "fieldId": {
             "type": "string",
-            "description": "The ID of the line-item question. Multiple Form Answers can have the same fieldId in a payload only if they\r\n            represent multiple selections to a multi-select (checkbox-style) question",
+            "description": "The ID of the line-item question. Multiple Form Answers can have the same fieldId in a payload only if they\n            represent multiple selections to a multi-select (checkbox-style) question",
             "nullable": true
           },
           "fieldTitle": {
             "type": "string",
-            "description": "The question that this line-item poses",
-            "nullable": true
+            "description": "The question that this line-item poses"
           },
           "titleValue": {
             "type": "string",
@@ -2366,7 +2659,7 @@
           },
           "optionId": {
             "type": "string",
-            "description": "If this answer field is a multi-select (checkboxes) question, the ID of the choice.\r\n            If the answer field is a checkbox+\"write-in\", this can be omitted",
+            "description": "If this answer field is a multi-select (checkboxes) question, the ID of the choice.\n            If the answer field is a checkbox+\"write-in\", this can be omitted",
             "nullable": true
           },
           "optionValue": {
@@ -2393,13 +2686,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -2413,13 +2704,11 @@
           },
           "formId": {
             "type": "string",
-            "description": "The ID of the form that was submitted",
-            "nullable": true
+            "description": "The ID of the form that was submitted"
           },
           "personId": {
             "type": "string",
-            "description": "The PersonBaseV1 ID of the person submitting the form. Must already exist",
-            "nullable": true
+            "description": "The PersonBaseV1 ID of the person submitting the form. Must already exist"
           },
           "submissionDate": {
             "type": "string",
@@ -2467,7 +2756,7 @@
         "properties": {
           "replaceAnswers": {
             "type": "boolean",
-            "description": "set to true to replace all answer line-items for this form response with those supplied in this payload.\r\nUseful if form response line-items do not have an ID"
+            "description": "set to true to replace all answer line-items for this form response with those supplied in this payload.\nUseful if form response line-items do not have an ID"
           },
           "type": {
             "description": "For webhook payload value MUST BE 'formresponses.v1.events.formresponse.updated'"
@@ -2480,13 +2769,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -2500,8 +2787,7 @@
           },
           "groupRoleName": {
             "type": "string",
-            "description": "The name of the role within the group",
-            "nullable": true
+            "description": "The name of the role within the group"
           },
           "groupRoleTypeId": {
             "type": "string",
@@ -2510,7 +2796,7 @@
           },
           "groupTypeId": {
             "type": "string",
-            "description": "The ID of the GroupTypeBaseV1 associated with this role.\r\nExample: groupTypeId is \"leader\" where roles could be \"coach\", \"servant\", \"chef\", \"usher\"",
+            "description": "The ID of the GroupTypeBaseV1 associated with this role.\nExample: groupTypeId is \"leader\" where roles could be \"coach\", \"servant\", \"chef\", \"usher\"",
             "nullable": true
           }
         },
@@ -2536,13 +2822,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -2556,12 +2840,11 @@
           },
           "groupRoleTypeName": {
             "type": "string",
-            "description": "The name of the group role type",
-            "nullable": true
+            "description": "The name of the group role type"
           }
         },
         "additionalProperties": false,
-        "description": "Represents a person's role within a PersonGroupBaseV1.\r\nExamples: \"Leader\", \"Assistant Leader\", \"Member\", \"Director\""
+        "description": "Represents a person's role within a PersonGroupBaseV1.\nExamples: \"Leader\", \"Assistant Leader\", \"Member\", \"Director\""
       },
       "GroupRoleTypeCreatedV1": {
         "type": "object",
@@ -2610,13 +2893,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -2630,12 +2911,11 @@
           },
           "groupTypeName": {
             "type": "string",
-            "description": "The name of the group type",
-            "nullable": true
+            "description": "The name of the group type"
           }
         },
         "additionalProperties": false,
-        "description": "Represents a type of PersonGroupBaseV1 within your system.\r\nCommon examples: \"Service Group\", \"Small Group\", \"Dream Team\", \"Audio/Visual\""
+        "description": "Represents a type of PersonGroupBaseV1 within your system.\nCommon examples: \"Service Group\", \"Small Group\", \"Dream Team\", \"Audio/Visual\""
       },
       "GroupTypeCreatedV1": {
         "type": "object",
@@ -2670,13 +2950,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -2690,48 +2968,39 @@
           },
           "locationName": {
             "type": "string",
-            "description": "The name of the location",
-            "nullable": true
+            "description": "The name of the location"
           },
           "regionName": {
             "type": "string",
-            "description": "The region name",
-            "nullable": true
+            "description": "The region name"
           },
           "address": {
             "type": "string",
-            "description": "The address",
-            "nullable": true
+            "description": "The address"
           },
           "address2": {
             "type": "string",
-            "description": "The second line of the address",
-            "nullable": true
+            "description": "The second line of the address"
           },
           "city": {
             "type": "string",
-            "description": "The city",
-            "nullable": true
+            "description": "The city"
           },
           "state": {
             "type": "string",
-            "description": "The state",
-            "nullable": true
+            "description": "The state"
           },
           "postalCode": {
             "type": "string",
-            "description": "The postal code",
-            "nullable": true
+            "description": "The postal code"
           },
           "phone": {
             "type": "string",
-            "description": "The phone number",
-            "nullable": true
+            "description": "The phone number"
           },
           "email": {
             "type": "string",
-            "description": "The email address",
-            "nullable": true
+            "description": "The email address"
           },
           "isActive": {
             "type": "boolean",
@@ -2779,13 +3048,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -2799,8 +3066,7 @@
           },
           "memberRoleName": {
             "type": "string",
-            "description": "The name of the member role",
-            "nullable": true
+            "description": "The name of the member role"
           },
           "isParent": {
             "type": "boolean",
@@ -2808,7 +3074,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Represents the base data for a PersonBaseV1's role within a PersonFamilyBaseV1.\r\nExamples: \"Parent\", \"Child\", \"Other\", \"Adult Child\""
+        "description": "Represents the base data for a PersonBaseV1's role within a PersonFamilyBaseV1.\nExamples: \"Parent\", \"Child\", \"Other\", \"Adult Child\""
       },
       "MemberRoleCreatedV1": {
         "type": "object",
@@ -2843,13 +3109,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -2863,12 +3127,11 @@
           },
           "memberTypeDescription": {
             "type": "string",
-            "description": "The description of the member type",
-            "nullable": true
+            "description": "The description of the member type"
           }
         },
         "additionalProperties": false,
-        "description": "Represents a type of relationship between a PersonBaseV1 and your organization. Examples:\r\n\"Member\", \"Staff\", \"Regular\". A person should be exactly one of these. Any more delineation can be specified\r\nthrough a PersonBaseV1's AttributeDataV1"
+        "description": "Represents a type of relationship between a PersonBaseV1 and your organization. Examples:\n\"Member\", \"Staff\", \"Regular\". A person should be exactly one of these. Any more delineation can be specified\nthrough a PersonBaseV1's AttributeDataV1"
       },
       "MemberTypeCreatedV1": {
         "type": "object",
@@ -2903,13 +3166,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -2930,13 +3191,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -3124,13 +3383,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -3144,8 +3401,7 @@
           },
           "familyName": {
             "type": "string",
-            "description": "The name of the family",
-            "nullable": true
+            "description": "The name of the family"
           },
           "primaryContactId": {
             "type": "string",
@@ -3161,8 +3417,7 @@
             "items": {
               "$ref": "#/components/schemas/PersonFamilyPersonRelationshipDataV1"
             },
-            "description": "A collection of people associated with this family. On update, only the people that are included in this\r\nlist will be modified",
-            "nullable": true
+            "description": "A collection of people associated with this family. On update, only the people that are included in this\nlist will be modified"
           }
         },
         "additionalProperties": false,
@@ -3187,13 +3442,11 @@
         "properties": {
           "personId": {
             "type": "string",
-            "description": "The PersonBaseV1 ID of the person",
-            "nullable": true
+            "description": "The PersonBaseV1 ID of the person"
           },
           "memberRoleId": {
             "type": "string",
-            "description": "The MemberRoleCreatedV1 ID of the person within this family\r\n            \r\nInternal examples: adult/child/etc. Defaults to 0 if omitted",
-            "nullable": true
+            "description": "The MemberRoleCreatedV1 ID of the person within this family\n            \nInternal examples: adult/child/etc. Defaults to 0 if omitted"
           },
           "isDeleted": {
             "type": "boolean",
@@ -3223,13 +3476,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -3243,8 +3494,7 @@
           },
           "groupName": {
             "type": "string",
-            "description": "The name of the group",
-            "nullable": true
+            "description": "The name of the group"
           },
           "departmentSourceId": {
             "type": "string",
@@ -3276,12 +3526,11 @@
             "items": {
               "$ref": "#/components/schemas/PersonGroupPersonV1"
             },
-            "description": "A collection of people in the group. On update, only the people that are included in this list will be modified",
-            "nullable": true
+            "description": "A collection of people in the group. On update, only the people that are included in this list will be modified"
           }
         },
         "additionalProperties": false,
-        "description": "Represents the base data for a Group of people. This could be a \"virtual\" group, or a real, physical group. It's\r\nflexible enough that any logical collection of people can be associated with each other"
+        "description": "Represents the base data for a Group of people. This could be a \"virtual\" group, or a real, physical group. It's\nflexible enough that any logical collection of people can be associated with each other"
       },
       "PersonGroupCreatedV1": {
         "type": "object",
@@ -3302,8 +3551,7 @@
         "properties": {
           "personId": {
             "type": "string",
-            "description": "The PersonBaseV1 ID of the person",
-            "nullable": true
+            "description": "The PersonBaseV1 ID of the person"
           },
           "isLeader": {
             "type": "boolean",
@@ -3339,7 +3587,7 @@
           },
           "isDeleted": {
             "type": "boolean",
-            "description": "Indicates if the person is deleted from the group. This will automatically be set if EndDate is\r\nin the past"
+            "description": "Indicates if the person is deleted from the group. This will automatically be set if EndDate is\nin the past"
           }
         },
         "additionalProperties": false,
@@ -3378,13 +3626,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -3409,12 +3655,12 @@
           },
           "signupId": {
             "type": "string",
-            "description": "Can be null. The ID of the common thing that was submitted by all those who registered/waitlisted/canceled.\r\nIf used, it must be the ID of a SignupBaseV1.",
+            "description": "Can be null. The ID of the common thing that was submitted by all those who registered/waitlisted/canceled.\nIf used, it must be the ID of a SignupBaseV1.",
             "nullable": true
           }
         },
         "additionalProperties": false,
-        "description": "A model representing that a person has been registered, waitlisted, or canceled for some SignupBaseV1.\r\nEach time a person is registered, waitlisted, or canceled for the same Signup, a new ID should be used."
+        "description": "A model representing that a person has been registered, waitlisted, or canceled for some SignupBaseV1.\nEach time a person is registered, waitlisted, or canceled for the same Signup, a new ID should be used."
       },
       "RegistrationCreatedV1": {
         "type": "object",
@@ -3426,8 +3672,7 @@
         "properties": {
           "kind": {
             "type": "string",
-            "description": "One of \"registered\", \"waitlisted\", or \"canceled\", describing the kind of registration action that was performed.\r\nOnce a RegistrationBaseV1 record has been created, the Kind cannot be changed.",
-            "nullable": true
+            "description": "One of \"registered\", \"waitlisted\", or \"canceled\", describing the kind of registration action that was performed.\nOnce a RegistrationBaseV1 record has been created, the Kind cannot be changed."
           },
           "type": {
             "description": "For webhook payload value MUST BE 'signups.v1.events.registration.created'"
@@ -3454,13 +3699,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -3474,13 +3717,11 @@
           },
           "signupName": {
             "type": "string",
-            "description": "The name of the signup",
-            "nullable": true
+            "description": "The name of the signup"
           },
           "signupDescription": {
             "type": "string",
-            "description": "The description of the signup",
-            "nullable": true
+            "description": "The description of the signup"
           },
           "archived": {
             "type": "boolean",
@@ -3494,7 +3735,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Represents the base data for a signup. This is something for which someone can \"sign up\", whatever that means in\r\nyour system. It can be as simple as an event for which you record \"expressing interest\"."
+        "description": "Represents the base data for a signup. This is something for which someone can \"sign up\", whatever that means in\nyour system. It can be as simple as an event for which you record \"expressing interest\"."
       },
       "SignupCreatedV1": {
         "type": "object",
@@ -3552,13 +3793,11 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "The external system unique identifier",
-            "nullable": true
+            "description": "The external system unique identifier"
           },
           "type": {
             "type": "string",
-            "description": "The type discriminator for the payload item",
-            "nullable": true
+            "description": "The type discriminator for the payload item"
           },
           "createDate": {
             "type": "string",
@@ -3593,12 +3832,11 @@
           },
           "serviceTypeName": {
             "type": "string",
-            "description": "If applicable, the name of the name of the service type related to this attendance",
-            "nullable": true
+            "description": "If applicable, the name of the name of the service type related to this attendance"
           },
           "attendanceTypeId": {
             "type": "string",
-            "description": "If applicable in your system, the type of this attendance. This should not be used to differentiate\r\nattendance/volunteering.",
+            "description": "If applicable in your system, the type of this attendance. This should not be used to differentiate\nattendance/volunteering.",
             "nullable": true
           },
           "cmsGroupId": {
@@ -3608,8 +3846,7 @@
           },
           "eventName": {
             "type": "string",
-            "description": "If applicable, the name attached to the EventData for this attendance",
-            "nullable": true
+            "description": "If applicable, the name attached to the EventData for this attendance"
           },
           "eventId": {
             "type": "string",
@@ -3660,14 +3897,14 @@
       },
       "WebhookPayload": {
         "required": [
-          "data"
+          "data",
+          "id"
         ],
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
-            "description": "Unique system identifier for the event, not to be confused with id of the data item.",
-            "nullable": true
+            "description": "Unique system identifier for the event, not to be confused with id of the data item."
           },
           "timestamp": {
             "type": "string",
@@ -3676,6 +3913,12 @@
           },
           "data": {
             "oneOf": [
+              {
+                "$ref": "#/components/schemas/AncestorRelationshipCreatedV1"
+              },
+              {
+                "$ref": "#/components/schemas/AncestorRelationshipUpdatedV1"
+              },
               {
                 "$ref": "#/components/schemas/AttendanceCreatedV1"
               },
@@ -3782,8 +4025,7 @@
                 "$ref": "#/components/schemas/VolunteerUpdatedV1"
               }
             ],
-            "description": "The data payload of the event",
-            "nullable": true
+            "description": "The data payload of the event"
           }
         },
         "additionalProperties": false,

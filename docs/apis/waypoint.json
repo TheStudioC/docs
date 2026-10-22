@@ -36,6 +36,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AudienceResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -57,6 +65,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -96,6 +109,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AudienceResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -117,6 +138,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -160,6 +186,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AudienceResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -210,6 +244,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AudienceResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -288,6 +330,11 @@
           "400": {
             "description": "Failed operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -332,6 +379,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BadgeResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -353,6 +408,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -392,6 +452,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BadgeResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -413,6 +481,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -433,6 +506,54 @@
         ]
       }
     },
+    "/api_ext/v1/Checkin": {
+      "get": {
+        "tags": [
+          "Checkin"
+        ],
+        "summary": "Returns information about dashboard check-ins, ordered by id.",
+        "description": "\r\nThe schedule's daysOfTheWeek is an array of integers between 0 (Sunday) and 6 (Saturday).\r\n\r\nThe schedule's startDate and endDate are local wall-clock times, not UTC. They have no offset and are\r\n                to be interpreted in the schedule's timezone.",
+        "responses": {
+          "200": {
+            "description": "Successful operation.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CheckinResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CheckinResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CheckinResponse"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Oops! Can't complete the request now."
+          }
+        },
+        "security": [
+          {
+            "Basic Authentication": [ ]
+          }
+        ]
+      }
+    },
     "/api_ext/v1/Dashboard/Links": {
       "post": {
         "tags": [
@@ -444,6 +565,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DashboardLinkResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -465,6 +594,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -494,6 +628,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DashboardLinkResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -515,6 +657,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -545,6 +692,11 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardSettingsModel"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DashboardSettingsModel"
@@ -576,6 +728,11 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardSettingsModel"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DashboardSettingsModel"
@@ -610,6 +767,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DashboardSettingsModel"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -649,6 +814,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CultureResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -663,6 +836,95 @@
                   "items": {
                     "$ref": "#/components/schemas/CultureResponse"
                   }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Oops! Can't complete the request now."
+          }
+        },
+        "security": [
+          {
+            "Basic Authentication": [ ]
+          }
+        ]
+      }
+    },
+    "/api_ext/v1/Export/Checkin": {
+      "get": {
+        "tags": [
+          "Export"
+        ],
+        "summary": "Exports dashboard check-in (attendance) records, paginated at 1000 records per page, ordered by check-in date.",
+        "description": "\r\nIncludes check-in types 22 (Attendance_Dismiss), 23 (Attendance_Onsite) and 24 (Attendance_Online).\r\n\r\nWhen \"next\" link is present there are more records; request that link to get the next page.",
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "Required. Inclusive start, UTC date and time.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "Optional. Exclusive end, UTC date and time. No upper bound when omitted.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Optional. 1-based page number, defaults to 1.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckinExportResponsePagedResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckinExportResponsePagedResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CheckinExportResponsePagedResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing or invalid parameters.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
                 }
               }
             }
@@ -708,6 +970,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MessageSearchResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -729,6 +999,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -777,6 +1052,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MessageSearchResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -798,6 +1081,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -841,6 +1129,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PersonResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -862,6 +1158,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -903,6 +1204,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PersonResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -924,6 +1233,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -975,6 +1289,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BadgeResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -996,6 +1318,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -1045,6 +1372,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BadgeResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -1066,6 +1401,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -1116,6 +1456,11 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonResults"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PersonResults"
@@ -1131,6 +1476,11 @@
           "500": {
             "description": "Internal Server Error",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonResults"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PersonResults"
@@ -1203,6 +1553,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PersonFindResult"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -1224,6 +1582,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -1267,6 +1630,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GroupResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -1288,6 +1659,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -1329,6 +1705,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GroupResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -1350,6 +1734,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -1412,6 +1801,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DashboardMessageResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -1433,6 +1830,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -1485,6 +1887,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DashboardMessageResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -1506,6 +1916,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -1544,6 +1959,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PersonTraitResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -1565,6 +1988,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -1606,6 +2034,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PersonTraitResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -1627,6 +2063,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -1653,7 +2094,7 @@
           "Person"
         ],
         "summary": "Gets a members available checkins.",
-        "description": "<p>The API returns data using the <a href=\"https://jsonapi.org/\">JSON API Specification</a>, which differs slightly from the provided example.</p><p>This endpoint respects the <code>Accept-Language</code> header as described <a href=\"https://thestudioc.github.io/docs/apis/waypoint/accept-language\">here</a>.</p>",
+        "description": "Each checkin returns three answer values: `Onsite` (Button1Value), `Online` (Button2Value)\r\nand `Dismiss` (Button3Value). Send the chosen value to SaveCheckin.\r\nText is localized using the Accept-Language header.<p>The API returns data using the <a href=\"https://jsonapi.org/\">JSON API Specification</a>, which differs slightly from the provided example.</p><p>This endpoint respects the <code>Accept-Language</code> header as described <a href=\"https://thestudioc.github.io/docs/apis/waypoint/accept-language\">here</a>.</p>",
         "parameters": [
           {
             "name": "sourceId",
@@ -1670,11 +2111,19 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PersonCheckinResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/CheckinResponse"
+                    "$ref": "#/components/schemas/PersonCheckinResponse"
                   }
                 }
               },
@@ -1682,7 +2131,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/CheckinResponse"
+                    "$ref": "#/components/schemas/PersonCheckinResponse"
                   }
                 }
               }
@@ -1691,6 +2140,11 @@
           "400": {
             "description": "Failed operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
@@ -1706,6 +2160,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -1731,7 +2190,8 @@
         "tags": [
           "Person"
         ],
-        "summary": "Saves a members checkin.",
+        "summary": "Saves a members checkin answer.",
+        "description": "Send as form data. Call once per answer; repeated calls record repeated answers.\r\n<list type=\"bullet\"><item>`Onsite`: member attended in person. Records attendance.</item><item>`Online`: member attended remotely. Records attendance.</item><item>`Dismiss`: member closed the prompt. Records a dismissal only, not attendance.</item></list>\r\nValues are case-insensitive. Any other value returns 200 and records nothing.",
         "parameters": [
           {
             "name": "sourceId",
@@ -1752,16 +2212,16 @@
                 "properties": {
                   "checkinId": {
                     "type": "integer",
-                    "description": "Checkin Id",
+                    "description": "Checkin Id from the Checkins response (`Id`).",
                     "format": "int64"
                   },
                   "result": {
                     "type": "string",
-                    "description": "Checkin result"
+                    "description": "Answer: `Onsite`, `Online` or `Dismiss`. Use the button values from the Checkins response."
                   },
                   "serviceType": {
                     "type": "string",
-                    "description": "Checkin service type."
+                    "description": "Service type the member picked from `ServiceTypes`. Optional. Stored with the tracking record."
                   }
                 }
               },
@@ -1781,11 +2241,16 @@
         },
         "responses": {
           "200": {
-            "description": "Successful operation."
+            "description": "Successful operation, including an unrecognized `result` that was ignored."
           },
           "400": {
-            "description": "Failed operation.",
+            "description": "Person or checkin not found.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
@@ -1801,6 +2266,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -1843,6 +2313,11 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -1858,6 +2333,11 @@
           "404": {
             "description": "Resource not found.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -1873,6 +2353,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -1924,6 +2409,11 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -1939,6 +2429,11 @@
           "404": {
             "description": "Resource not found.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -1954,6 +2449,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -2006,6 +2506,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DirectMessageResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -2093,6 +2601,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DirectMessageResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -2150,6 +2666,11 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -2165,6 +2686,11 @@
           "400": {
             "description": "Failed operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
@@ -2180,6 +2706,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -2240,6 +2771,11 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -2255,6 +2791,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -2307,6 +2848,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PollResults"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -2328,6 +2877,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -2381,6 +2935,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PollResultsHtmlResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -2402,6 +2964,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -2454,6 +3021,14 @@
           "200": {
             "description": "Successful operation.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PollResultsResponse"
+                  }
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -2475,6 +3050,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -2493,26 +3073,6 @@
             "Basic Authentication": [ ]
           }
         ]
-      }
-    },
-    "/buildinfo": {
-      "get": {
-        "tags": [
-          "StudioCAdmin.API"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": { }
-                }
-              }
-            }
-          }
-        }
       }
     },
     "/api_ext/v1/Tracking/DashboardView": {
@@ -2571,6 +3131,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -2648,6 +3213,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -2725,6 +3295,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -2795,6 +3370,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -2863,6 +3443,11 @@
           "404": {
             "description": "Resource not found.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -2878,6 +3463,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -2947,6 +3537,11 @@
           "404": {
             "description": "Resource not found.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -2962,6 +3557,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -3031,6 +3631,11 @@
           "404": {
             "description": "Resource not found.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -3046,6 +3651,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -3108,6 +3718,11 @@
           "404": {
             "description": "Resource not found.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -3123,6 +3738,11 @@
           "500": {
             "description": "Oops! Can't complete the request now.",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
               "application/json": {
                 "schema": {
                   "type": "string"
@@ -3376,6 +3996,77 @@
         },
         "additionalProperties": false
       },
+      "CheckinExportResponse": {
+        "type": "object",
+        "properties": {
+          "personSourceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "checkinType": {
+            "type": "integer",
+            "description": "Tracking type: 22 = Attendance_Dismiss, 23 = Attendance_Onsite, 24 = Attendance_Online",
+            "format": "int32"
+          },
+          "checkinDate": {
+            "type": "string",
+            "description": "UTC date and time of the check-in",
+            "format": "date-time"
+          },
+          "serviceType": {
+            "type": "string",
+            "nullable": true
+          },
+          "checkinId": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CheckinExportResponsePagedResponse": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "description": "Total number of records across all pages",
+            "format": "int64"
+          },
+          "count": {
+            "type": "integer",
+            "description": "Number of records on this page",
+            "format": "int32"
+          },
+          "next": {
+            "type": "string",
+            "description": "Link to the next page, null when this is the last page",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CheckinExportResponse"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "description": "Standard envelope for paginated API responses"
+      },
+      "CheckinLocationResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Source id of the location",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CheckinResponse": {
         "type": "object",
         "properties": {
@@ -3383,18 +4074,7 @@
             "type": "integer",
             "format": "int64"
           },
-          "cultureCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "isDefaultCulture": {
-            "type": "boolean"
-          },
           "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "eventName": {
             "type": "string",
             "nullable": true
           },
@@ -3406,27 +4086,65 @@
             "type": "string",
             "nullable": true
           },
-          "button1Value": {
-            "type": "string",
-            "nullable": true
-          },
           "button2Text": {
             "type": "string",
             "nullable": true
           },
-          "button2Value": {
-            "type": "string",
-            "nullable": true
-          },
-          "button3Value": {
-            "type": "string",
-            "nullable": true
+          "enabled": {
+            "type": "boolean"
           },
           "serviceTypes": {
             "type": "array",
             "items": {
               "type": "string"
-            },
+            }
+          },
+          "locations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CheckinLocationResponse"
+            }
+          },
+          "schedule": {
+            "$ref": "#/components/schemas/CheckinScheduleResponse"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CheckinScheduleResponse": {
+        "type": "object",
+        "properties": {
+          "intervalType": {
+            "type": "string",
+            "nullable": true
+          },
+          "daysOfTheWeek": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "timezone": {
+            "type": "string",
             "nullable": true
           }
         },
@@ -3748,9 +4466,6 @@
           "loginPagesInfo": {
             "$ref": "#/components/schemas/LoginPagesInfo"
           },
-          "emailFormInfo": {
-            "$ref": "#/components/schemas/EmailFormInfo"
-          },
           "groupInterfaceInfo": {
             "$ref": "#/components/schemas/GroupInterfaceInfo"
           },
@@ -3761,9 +4476,6 @@
             "type": "string"
           },
           "editProfileLink": {
-            "type": "string"
-          },
-          "logoutLink": {
             "type": "string"
           },
           "pageBgColor": {
@@ -3793,9 +4505,6 @@
             "$ref": "#/components/schemas/UploadInformation"
           },
           "hideMyConnectionsCard": {
-            "type": "boolean"
-          },
-          "hideLogoutLink": {
             "type": "boolean"
           }
         },
@@ -3916,37 +4625,6 @@
           "total": {
             "type": "integer",
             "format": "int64"
-          }
-        },
-        "additionalProperties": false
-      },
-      "EmailFormInfo": {
-        "type": "object",
-        "properties": {
-          "unsubscribeHeading": {
-            "type": "string",
-            "nullable": true
-          },
-          "unsubscribeCopy": {
-            "type": "string",
-            "nullable": true
-          },
-          "modifiedDate": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "lastModifiedBy": {
-            "type": "string",
-            "nullable": true
-          },
-          "smsPreferencesCopy": {
-            "type": "string",
-            "nullable": true
-          },
-          "emailPreferencesCopy": {
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -4236,6 +4914,75 @@
           }
         },
         "additionalProperties": false
+      },
+      "PersonCheckinResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Checkin Id. Send as `checkinId` to SaveCheckin.",
+            "format": "int64"
+          },
+          "cultureCode": {
+            "type": "string",
+            "description": "Culture of the returned text, for example `en-US`.",
+            "nullable": true
+          },
+          "isDefaultCulture": {
+            "type": "boolean",
+            "description": "True when the text is in the organization's default culture."
+          },
+          "name": {
+            "type": "string",
+            "description": "Checkin title.",
+            "nullable": true
+          },
+          "eventName": {
+            "type": "string",
+            "description": "Name of the scheduled event. May be null. Echoed in tracking.",
+            "nullable": true
+          },
+          "messageText": {
+            "type": "string",
+            "description": "Prompt text with member tokens already replaced.",
+            "nullable": true
+          },
+          "button1Text": {
+            "type": "string",
+            "description": "Label for the first button. Display only.",
+            "nullable": true
+          },
+          "button1Value": {
+            "type": "string",
+            "description": "Value to send as `result` when the first button is chosen. Always `Onsite`.",
+            "nullable": true
+          },
+          "button2Text": {
+            "type": "string",
+            "description": "Label for the second button. Display only.",
+            "nullable": true
+          },
+          "button2Value": {
+            "type": "string",
+            "description": "Value to send as `result` when the second button is chosen. Always `Online`.",
+            "nullable": true
+          },
+          "button3Value": {
+            "type": "string",
+            "description": "Value to send as `result` when the member dismisses the prompt. Always `Dismiss`.\r\nThere is no label; clients render their own close control.",
+            "nullable": true
+          },
+          "serviceTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Service types the member can pick from. Null when none. Send the pick as `serviceType`.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "A checkin prompt available to a member. Send the chosen button value back to SaveCheckin as `result`."
       },
       "PersonFamilyResponse": {
         "type": "object",
@@ -4779,5 +5526,34 @@
         "scheme": "basic"
       }
     }
-  }
+  },
+  "tags": [
+    {
+      "name": "Audience"
+    },
+    {
+      "name": "Badges"
+    },
+    {
+      "name": "Checkin"
+    },
+    {
+      "name": "Dashboard"
+    },
+    {
+      "name": "Export"
+    },
+    {
+      "name": "Messages"
+    },
+    {
+      "name": "Person"
+    },
+    {
+      "name": "Poll"
+    },
+    {
+      "name": "Tracking"
+    }
+  ]
 }
